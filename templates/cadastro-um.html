@@ -1,0 +1,43 @@
+<ion-view view-title="Cadastro Um">
+	<ion-content id="cad-1" class="bg-1 text-center">
+		<div class="col col-offset-10 col-80">
+			<div class="row">
+				<div class="col">
+					<h2>CADASTRE-SE</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col text-center">
+					<button class="button button-block button-light button-outline"><i class = "ion-social-facebook" style="font-size:22px;"></i> COM O FACEBOOK</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col text-center">
+					<button class="button button-block button-light button-outline"><i class = " ion-social-googleplus" style="font-size:22px;"></i>  COM GOOGLE +</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="list">
+					<select ng-model="selectCid" ng-options="cidade.id_municipio as cidade.nome for cidade in cidades" style="width:100%;">							
+						</select>
+					<!--	<ion-md-input placeholder="MUNICÍPIO" hightlight-color="dark" type="text" ng-model="add.municipio"></ion-md-input> -->
+
+						<ion-md-input placeholder="NOME COMPLETO" hightlight-color="dark" type="text" ng-model="add.nome"></ion-md-input>
+
+						<ion-md-input placeholder="EMAIL" hightlight-color="dark" type="email" ng-model="add.email"></ion-md-input>
+
+						<ion-md-input placeholder="SENHA" hightlight-color="dark" type="password" ng-model="add.senha"></ion-md-input>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col text-center margin-top-30">
+					<button class="button button-back button-light button-outline" ng-click="voltar()">VOLTAR</button>
+					<button class="button button-next button-light button-outline" ng-click="proximo(add)">PRÓXIMO</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

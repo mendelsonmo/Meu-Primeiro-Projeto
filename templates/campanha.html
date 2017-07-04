@@ -1,0 +1,34 @@
+<ion-view>
+	<ion-content id="campanha">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+		
+		<div class="row">
+			<div class="col">
+				<button class="button button-clear button-stable button-left ion-ios-arrow-back" ng-click="voltar()"> Voltar</button>
+				<button class="button button-clear button-stable button-next ion-ios-trash-outline" ng-click="descartarCampanha()"> Descartar</button>
+			</div>
+		</div>
+		<div class="row">
+			<p ng-show="mensagem.length">
+				{{mensagem}}
+			</p>
+		</div>
+		<div class="row">
+			<h4>{{campanhas.nome}}</h4>
+
+		</div>
+		<div class="row">
+			<p>{{campanhas.data_inicial}}</p>
+		</div>
+
+		<div class="row" ionicstringtohtml inputstring="campanhasHtml"><!-- Mostra o conteudo da campanha, o qual é um html vindo da api -->
+		</div>	
+
+	</ion-content>
+</ion-view>

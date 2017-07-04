@@ -1,0 +1,49 @@
+<ion-view>
+	<ion-content id="pesquisa">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+		
+		<div class="row">
+			<div class="col">
+				<button class="button button-clear button-stable button-left ion-ios-arrow-back" ng-click="voltar()">
+					Voltar
+				</button>
+				<button class="button button-clear button-stable button-next ion-ios-trash-outline">
+					Descartar
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<p class="alert" ng-show="mensagem.length">
+				{{mensagem}}
+			</p>
+		</div>
+		<div class="row">
+			<h4>{{dados.nome}}</h4>
+		</div>
+		<div class="row">
+			<p>Pesquisa (Expira em {{dados.data_final | date: 'dd/MM/yyyy'}})</p>
+		</div>
+		<div class="row">
+			<div class="col">
+				{{dados.texto_abertura}}
+			</div>
+		</div>
+		<div class="opcoes-pesquisa">
+
+			<button class="button button-clear button-stable button-left" ng-click="maisTarde()">
+				Mais Tarde
+			</button>
+			<button class="button button-clear button-stable button-next" ng-click="iniciarPesquisa()">
+				Iniciar Pesquisa
+			</button>
+			
+		</div>
+	</ion-content>
+
+</ion-view>

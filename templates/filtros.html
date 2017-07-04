@@ -1,0 +1,47 @@
+<ion-view view-title="Filtros!">
+	<ion-content id="filtros">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+		<div class="row">
+			<div class="col">
+				<a class="button button-full button-stable button-clear ion-funnel" > FILTROS</a>
+			</div>
+		</div>
+		<div class="row ">
+			<div class="col">
+				<ion-md-input placeholder="Nº da Solicitação" hightlight-color="dark" type="text">
+				</ion-md-input>
+				<ion-md-input placeholder="Status" hightlight-color="dark" type="text">
+				</ion-md-input>
+				<ion-md-input placeholder="Assunto" hightlight-color="dark" type="text">
+				</ion-md-input>
+				<ion-md-input placeholder="Data ínicio" hightlight-color="dark" type="text">
+				</ion-md-input>
+				<ion-md-input placeholder="Data Fim" hightlight-color="dark" type="text">
+				</ion-md-input>
+				<ion-md-input placeholder="Ordernar Por" hightlight-color="dark" type="text">
+				</ion-md-input>
+			</div>
+		</div>
+		<div id="checkbox" class="row">
+			<div class="col">
+				<ion-checkbox >Somente minhas solicitações</ion-checkbox>
+			</div>
+		</div>
+
+		<div class="row">
+			<button class="button button-full button-orange button-clear ion-plus" > LIMPAR FILTROS</button>
+		</div>
+		<div class="row">
+			<button class="button button-full button-balanced button-clear ion-minus" > FILTRAR RESULTADOS</button>
+		</div>
+		<div class="row">
+			<button class="button button-full button-positive button-clear ion-arrow-left-c" ng-click="voltarHome()" > VOLTAR</button>
+		</div>
+	</ion-content>
+</ion-view>

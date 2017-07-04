@@ -1,0 +1,46 @@
+<ion-view view-title="login">
+	<ion-content id="login" class="bg-1 text-center"  >
+		<div class="row">
+			<div class="col ">	
+				<i class="icon ion-ios-person-outline" style="font-size:150px; color: #fff;"></i>
+				<h2>CIDADÃO</h2>
+			</div>
+		</div>
+		<div class="row">
+			<form ng-submit="signIn(login)" class="col col-offset-10 col-80">							
+							<ion-md-input  placeholder="<i class='icon ion-android-person'></i> Email ou Cartão Cidadão" hightlight-color="dark" type="text"
+							ng-model="login.user"></ion-md-input>									
+							<ion-md-input placeholder="<i class='icon ion-locked'></i> Senha" hightlight-color="dark" type="password" ng-model="login.password">
+							</ion-md-input>				
+				<button type="submit" class="button button-light button-outline margin-top-30" >ENTRAR</button>				
+			</form>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<button href="#/tabs.home" class="button button-block button-light button-outline "> <i class = "ion-social-facebook" style="font-size:22px;"></i> ENTRAR COM O FACEBOOK </button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<button class="button button-block button-light button-outline"><i class = " ion-social-googleplus" style="font-size:22px;"></i>  ENTRAR COM GOOGLE +</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<button class="button button-clear button-light"
+				ng-click="cadastrar()">CADASTRE-SE</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<a class="button button-clear button-light" ng-click="esqueciSenha()">ESQUECI MINHA SENHA</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<p id="gpd">GPD TECNOLOGIA &copy;</p>
+			</div>	
+		</div>
+
+	</ion-content>
+</ion-view>

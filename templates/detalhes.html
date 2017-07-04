@@ -1,0 +1,68 @@
+<ion-view view-title="detalhes">
+	<ion-content id="detalhes">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+
+		<div class="list ">
+			<div id="card" class="list" > <!-- Card da postagem -->
+				<div class=" item item-avatar">
+					<img src="img/wallpaper.png">
+					<h2>{{detalheProtocolo.nome}}</h2>
+				</div>
+				<div class="item item-body">
+					<div class="container">
+						<img class="full-image" src="img/wallpaper.png">
+						<p class="situacao top-left">{{detalheProtocolo.status}}</p>
+						<p class="situacao bottom-right">{{detalheProtocolo.numero}}</p>
+					</div>
+
+					<p>{{detalheProtocolo.localizacao}}</p>
+					<p>{{detalheProtocolo.data_hora}}</p>
+					<p>{{detalheProtocolo.servico}}</p>
+					<p>{{detalheProtocolo.publicacao}}</p>
+
+					<div class="">
+						<a class="subdued" ng-click="gostei()" ng-class="{'active': isActiveOne}">
+							<i class="icon ion-thumbsup" style="font-size:15px;"></i> 
+							({{detalheProtocolo.qtd_gostei}}) Like
+						</a>
+						<a  class="subdued" ng-click="naoGostei()" ng-class="{'active': isActiveTwo}">
+							<i class="icon ion-thumbsdown" style="font-size:15px;"></i> ({{detalheProtocolo.qtd_nao_gostei}}) Dislike
+						</a>
+						<a  class="subdued">
+							<i class="icon ion-ios-chatbubble-outline" style="font-size:15px;"></i> ({{detalheProtocolo.qtd_comentarios}}) Comments
+						</a>
+						<a  class="subdued" >
+							<i class="ion-document-text"  style="font-size:15px;"></i>
+							Detalhes
+						</a>
+					</div>
+				</div>
+			</div> <!-- fim do Card da postagem -->
+
+			<button class="button button-full button-clear button-stable" ui-sref="tabs.verMais"> VER MAIS COMENTÁRIOS</button>
+
+			<div id="comentario" class="list"> <!-- Listagem de comentários -->
+				<a class="item item-avatar" ng-repeat="comentario in comentarios | limitTo: 1" >
+					<img src="img/wallpaper.png">
+					<h2>{{comentario.nome}}</h2>
+					<p>{{comentario.comentario}}</p>
+				</a>
+			</div> <!-- Fim da Listagem de comentários -->
+
+			<div id="comentario-form" class="row"> <!-- Envio de comentários -->
+				<div class="col">
+					<form ng-submit="comentar(comentario)">
+						<ion-md-input placeholder="Comentar" ng-model="comentario.valor" hightlight-color="dark" type="text"></ion-md-input>
+
+						<button type="submit" class="button button-full button-stable button-clear ion-navigate"> ENVIAR</button>
+					</form>
+				</div>
+			</div> <!-- fim de envio de comentários -->
+		</ion-content>
+	</ion-view>

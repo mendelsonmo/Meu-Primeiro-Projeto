@@ -1,0 +1,69 @@
+<ion-view>
+	<ion-content id="pesquisa">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+		
+		<div class="row">
+			<div class="col">
+				<button class="button button-clear button-stable button-left ion-ios-arrow-back" ng-click="voltar()">
+					Voltar
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h4>{{pesquisa.nome}}</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<p>Pesquisa (Expira em {{pesquisa.data_final | date: 'dd/MM/yyyy'}})</p>
+			</div>
+		</div>
+		<div ng-repeat="pergunta in perguntas | pagination: curPage * pageSize | limitTo: pageSize"> <!-- realiza o loop para listar as perguntas -->
+			<form >
+				<div class="row">
+					<div class="col descricacao">
+						{{pergunta.descricao}}
+					</div>
+				</div>
+				<div class="row" ng-repeat="perguntaData in pergunta.opcoes as teste"> <!-- realizar o loop para listar a descrição das perguntas, no caso, as alternativas -->
+					<div class="col" ng-if="pergunta.tipo == 1"> <!-- exibe se a pergunta for de múltipla escolha -->
+						<ion-checkbox ng-click="getColecao(perguntaData, pergunta)">{{perguntaData.descricao}}</ion-checkbox>
+
+					</div>
+					<div class="col" ng-if="pergunta.tipo == 2"> <!-- exibe se a pergunta for de única escolha -->
+
+						<ion-checkbox  ng-model="perguntaData.checked" ng-click="updateSelection($index, teste); getColecao(perguntaData, pergunta)">{{perguntaData.descricao}} </ion-checkbox>
+
+
+					</div>
+				</div>
+				<div class="row resposta" ng-if="pergunta.tipo == 3"> <!-- exibe se tipo da pergunta for dissertativa -->
+					<ion-md-input ng-model="form.descricao" placeholder="Resposta" hightlight-color="dark" type="text"></ion-md-input>
+				</div>
+
+			</form>
+		</div>		
+		<div class="row" ng-show="curPage >= perguntas.length/pageSize - 1"><!-- Exibe no final da quantidade perguntas -->
+			
+			<button class="button button-full button-stable button-clear ion-checkmark-round" ng-click="respondePesquisa(form)"> Pesquisa Finalizada</button>
+		</div>
+
+	</ion-content>
+	<div class="bar bar-footer bar-light"><!-- Paginação -->
+		<button class="button button-clear button-stable button-left" ng-disabled="curPage == 0" ng-click="curPage=curPage-1">
+			Anterior
+		</button>
+		<button class="button button-clear button-stable button-next" ng-disabled="curPage >= perguntas.length/pageSize - 1" ng-click="curPage = curPage+1">
+			Próxima
+		</button>
+
+	</div>
+
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view view-title="ver-mais">
+	<ion-content id="ver-mais">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+
+		<input id="tab1" type="radio" name="tabs" checked>
+		<label for="tab1"><i class="icon ion-thumbsup"></i>Like</label>
+
+		<input id="tab2" type="radio" name="tabs">
+		<label for="tab2"><i class="icon ion-thumbsdown"></i> Dislike</label>
+
+		<input id="tab3" type="radio" name="tabs">
+		<label for="tab3"><i class="icon ion-ios-chatbubble-outline"></i> Comments</label>
+
+		<section id="content1">
+			<div id="comentario" class="list"> <!-- Listagem de comentários -->
+				<a class="item item-avatar" ng-repeat="userLike in userLikes">
+					<img ng-src="{{userLike.foto}}">
+					<h2>{{userLike.nome}}</h2>
+					<p>{{userLike.comentario}}</p>
+				</a>
+			</div> <!-- Fim da Listagem de comentários -->
+		</section>
+
+		<section id="content2">
+			<div id="comentario" class="list"> <!-- Listagem de comentários -->
+				<a class="item item-avatar" ng-repeat="userDislike in userDislikes">
+					<img ng-src="{{userDislike.foto}}">
+					<h2>{{userDislike.nome}}</h2>
+					<p>{{userDislike.comentario}}</p>
+				</a>
+			</div> <!-- Fim da Listagem de comentários -->
+		</section>
+
+		<section id="content3">
+			<div id="comentario" class="list"> <!-- Listagem de comentários -->
+				<a class="item item-avatar" ng-repeat="comentario in comentarios" on-hold="excluirComentario(comentario)">
+					<img src="img/wallpaper.png">
+					<h2>{{comentario.nome}}</h2>
+					<p>{{comentario.comentario}}</p>
+				</a>
+			</div> <!-- Fim da Listagem de comentários -->
+		</section>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view view-title="Segunda parte do cadastro">
+	<ion-content id="cad-2" class="bg-1 text-center">
+		<div class="col col-offset-10 col-80">
+			<div class="row">
+				<div class="col col-offset-10 col-70">
+					<h2>CADASTRE-SE</h2>
+					<h5>COMPLETE O CADASTRO</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="list">
+						<ion-md-input placeholder="CARTÃO CIDADÃO" hightlight-color="dark" type="text" ng-model="dados.cartaoCidadao"></ion-md-input>
+
+						<ion-md-input placeholder="SEXO" 
+						hightlight-color="dark" type="text" ng-model="dados.sexo"></ion-md-input>
+
+						<ion-md-input placeholder="DATA DE NASCIMENTO" hightlight-color="dark" type="text" ng-model="dados.dataNascimento"></ion-md-input>
+
+						<ion-md-input placeholder="NOME DA MÃE" hightlight-color="dark" type="text" ng-model="dados.mae"></ion-md-input>
+
+						<ion-md-input placeholder="CELULAR" hightlight-color="dark" type="text" ng-model="dados.celular"></ion-md-input>
+					</div>
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col text-center margin-top-30">
+					<button class="button button-back button-light button-outline" ng-click="voltarDois()">VOLTAR</button>
+					<button type="submit" class="button button-next button-light button-outline" ng-click="salvar(dados)">PRONTO!</button>
+				</div>
+			</div>
+		</div>
+		
+	</ion-content>
+</ion-view>

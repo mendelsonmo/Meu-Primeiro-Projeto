@@ -1,0 +1,45 @@
+<ion-view view-title="Home">
+	<ion-content id="home">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+		<div class="row">
+			<button class="button btn button-back button-stable" ng-click="denunciar()"><strong>+</strong> DENÚNCIA</button>
+			<button class="button btn button-next button-stable" ng-click="ouvidoria()"><strong>+</strong> OUVIDORIA</button>
+		</div>
+		<div id="listagem-home" class="list card" ng-repeat="protocoloInicial in protocolosIniciais">
+			<div class=" item item-avatar">
+				<img src="img/wallpaper.png">
+				<div id="listagem-nome" class="row">
+					<h2>{{protocoloInicial.nome}}</h2>
+					<a ng-click="acompanhar(protocoloInicial)"><i class="icon ion-chevron-down"></i></a>
+				</div>
+			</div>
+			<div class="item item-body">
+				<div class="container">
+					<img class="full-image" src="img/wallpaper.png">
+					<p class="situacao top-left">{{protocoloInicial.status}}</p>
+					
+					<p class="situacao bottom-right">{{protocoloInicial.numero}}</p>
+				</div>
+				
+				<p>{{protocoloInicial.localizacao}}</p>
+				<p>{{protocoloInicial.data_hora}}</p>
+				<p>{{protocoloInicial.servico}}</p>
+				<p>{{protocoloInicial.publicacao}}</p>
+				<div class="">
+					<a class="subdued"><i class="icon ion-thumbsup" style="font-size:15px;"></i> ({{protocoloInicial.qtd_gostei}}) Like</a>
+					<a  class="subdued"><i class="icon ion-thumbsdown" style="font-size:15px;"></i> ({{protocoloInicial.qtd_nao_gostei}}) Dislike</a>
+					<a  class="subdued"><i class="icon ion-ios-chatbubble-outline" style="font-size:15px;"></i> ({{protocoloInicial.qtd_comentarios}}) Comments</a>
+					<a  class="subdued"  ng-click="detalhesProtocolo(protocoloInicial)"><i class="ion-document-text"  style="font-size:15px;"></i> Detalhes</a>
+				</div>
+			</div>
+
+		</div>
+
+	</ion-content>
+</ion-view>

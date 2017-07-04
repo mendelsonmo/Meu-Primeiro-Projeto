@@ -1,0 +1,67 @@
+<ion-view view-title="Ajustes">
+	<ion-content id="ajustes">
+		<div class="list">
+			<a ui-sref="tabs.perfil" class="item item-avatar">
+				<img ng-src="{{foto_usuario}}">
+				<h2>{{nome_usuario}}</h2>
+				<h6>{{cidade_usuario}}</h6>
+			</a>
+		</div>
+		
+		<div class="row">
+			<div class="col">
+				<button class="button button-full button-stable button-clear ion-android-person text-left" ng-click="perfil()"> ALTERAR PERFIL</button>
+			</div>
+		</div>
+		<div class="row">
+			<div  class="col">
+				<h5>Notificações</h5>
+				<ul class="list">
+					<li class="item item-toggle item-toggle-left">
+						Receber Notificações
+						<label class="toggle  toggle-balanced">
+							<input type="checkbox">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+
+					</li>
+					<li class="item item-toggle">
+						Receber Acompanhamento
+						<label class="toggle  toggle-balanced">
+							<input type="checkbox">
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</div> 
+		<div class="row">
+			<div class="col">
+				<h5>Fale Conosco</h5>
+				<span class="item item-icon-left">
+					contato@cosmopolis.sp.gov.br
+					<i class="icon ion-ios-email-outline"></i>
+				</span>
+				<span class="item item-icon-left">
+					(19) 3418-2580
+					<i class="icon ion-ios-telephone-outline"></i>
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h5>Sobre</h5>
+				<p>Aplicativo desenvolvido por GPD Tecnologia</p>
+			</div>
+		</div>
+		<div class="row" ng-controller="LoginController">
+			<div class="col text-center">
+				<button class="button button-icon button-orange icon ion-android-exit" ng-click="logout()"> Sair</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

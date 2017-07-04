@@ -1,0 +1,27 @@
+<ion-view view-title="Acompanhe">
+	<ion-content id="obterLocalizacao">
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7H5TuQo6aJaHViLezwf10EF9IFHFZs18"
+  type="text/javascript"></script>
+	</script>
+		<div class="row">
+			<div class="col">
+				<ion-md-input ng-model="enderecolocal" id="endLocal" placeholder="Endereço" hightlight-color="dark" type="text">
+				</ion-md-input>
+				<button class="button button-full button-stable button-clear ion-paper-airplane"> 
+					Procurar
+				</button>
+			</div>
+		</div>
+		<div class="row text-center mapa">
+			<div class="col" id="map" style="margin-top: -2cm; height:200px;">
+				AQUI TERÁ UM MAPA
+			</div>
+		</div>
+		<div >
+			<button class="button btn button-icon button-clear button-balanced button-full ion-checkmark-round" ng-click="usarLocalizacao()"> 
+				Usar Localização Selecionada
+			</button>
+		</div>
+	</ion-content>
+</ion-view>
